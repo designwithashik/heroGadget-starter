@@ -1,10 +1,11 @@
 import React from 'react';
-import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth'
+import { FacebookAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth'
 import { app } from '../firebase/firebase.config';
     const auth = getAuth(app)
 
 const Login = () => {
     const googleProvider = new GoogleAuthProvider();
+    const facebookProvider = new FacebookAuthProvider();
 
     const handleGoogleLogin = () => {
         signInWithPopup(auth, googleProvider)
@@ -14,6 +15,14 @@ const Login = () => {
             .catch(error => {
             console.log(error)
         })
+    }
+
+    const handleFacebookLogin = () => {
+        signInWithPopup(auth, facebookProvider)
+            .then(result => {
+                console.log(result.user)
+            })
+        .catch(error=>console.log(error))
     }
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -38,6 +47,11 @@ const Login = () => {
         type='submit'
         className='btn-primary  block'
       >Google Login</button>
+                <button
+                    onClick={handleFacebookLogin}
+        type='submit'
+        className='btn-primary  block'
+      >Facebook Login</button>
             </form>
         </div>
     );
