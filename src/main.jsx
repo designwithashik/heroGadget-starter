@@ -10,6 +10,8 @@ import CartItem from './components/Cards/CartItem'
 import Cart from './components/Cart'
 import { productsAndCartData } from './loaders/getCartAddedProductData'
 import { Toaster } from 'react-hot-toast';
+import Login from './components/Login'
+import SignUp from './components/SignUp'
 
 
 const router = createBrowserRouter([
@@ -35,6 +37,14 @@ const router = createBrowserRouter([
                 element: <Cart />,
                 loader: productsAndCartData
                 
+            },
+            {
+                path: '/login',
+                element: <Login/>
+            },
+            {
+                path: '/sign-up',
+                element: <SignUp/>
             }
         ]
     }

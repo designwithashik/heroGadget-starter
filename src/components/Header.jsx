@@ -65,6 +65,28 @@ const Header = () => {
             </Link>
           </li>
           <li>
+                      <NavLink 
+                        className={({ isActive }) => (isActive ? 'active' : 'default')}
+                        to='/login'
+                        aria-label='login'
+                        title='login'
+                        
+                      >
+                        Login
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink 
+                        className={({ isActive }) => (isActive ? 'active' : 'default')}
+                        to='/sign-up'
+                        aria-label='Sign Up'
+                        title='Sign Up'
+                        
+                      >
+                        Sign Up
+                      </NavLink>
+                    </li>
+          <li>
             <NavLink
               to='/about'
               aria-label='About Us'
@@ -163,6 +185,26 @@ const Header = () => {
                 <p className='absolute top-0 left-6 text-base'>{items}</p>
 
                         </div>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to='/login'
+                        aria-label='login'
+                        title='login'
+                        className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                      >
+                        Login
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to='/sign-up'
+                        aria-label='Sign Up'
+                        title='Sign Up'
+                        className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
+                      >
+                        Sign Up
                       </Link>
                     </li>
                     <li>
